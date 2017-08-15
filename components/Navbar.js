@@ -14,14 +14,12 @@ export default class Navbar extends Component {
             Quotes App
           </a>
           <div className="navbar-form">
-            {!isAuthenticated &&
-              <Login
-                errorMessage={errorMessage}
-                onLoginClick={creds => dispatch(loginUser(creds))}
-              />}
-
-            {isAuthenticated &&
-              <Logout onLogoutClick={() => dispatch(logoutUser())} />}
+            {isAuthenticated
+              ? <Logout onLogoutClick={() => dispatch(logoutUser())} />
+              : <Login
+                  errorMessage={errorMessage}
+                  onLoginClick={creds => dispatch(loginUser(creds))}
+                />}
           </div>
         </div>
       </nav>

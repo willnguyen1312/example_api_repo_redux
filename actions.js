@@ -11,8 +11,8 @@ function requestLogin(creds) {
   return {
     type: LOGIN_REQUEST,
     isFetching: true,
-    isAuthenticated: false,
-    creds
+    isAuthenticated: false
+    // creds
   };
 }
 
@@ -20,8 +20,8 @@ function receiveLogin(user) {
   return {
     type: LOGIN_SUCCESS,
     isFetching: false,
-    isAuthenticated: true,
-    access_token: user.access_token
+    isAuthenticated: true
+    // access_token: user.access_token
   };
 }
 

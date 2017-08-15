@@ -19,8 +19,8 @@ import { createReducer } from "redux-create-reducer";
 const LOGIN_REQUEST = (state, action) =>
   Object.assign({}, state, {
     isFetching: true,
-    isAuthenticated: false,
-    user: action.creds
+    isAuthenticated: false
+    // user: action.creds - not good to save credentials in memory
   });
 
 const LOGIN_SUCCESS = state =>
@@ -45,7 +45,8 @@ const LOGOUT_SUCCESS = (state, action) =>
 
 const initAuthState = {
   isFetching: false,
-  isAuthenticated: localStorage.getItem("access_token") ? true : false
+  isAuthenticated: localStorage.getItem("access_token") ? true : false,
+  errorMessage: ""
 };
 
 const auth = createReducer(initAuthState, {

@@ -1,14 +1,19 @@
-import React, { Component, PropTypes } from 'react'
-import { connect } from 'react-redux'
-import { loginUser, fetchQuote, fetchSecretQuote } from '../actions'
-import Login from '../components/Login'
-import Navbar from '../components/Navbar'
-import Quotes from '../components/Quotes'
+import React, { Component, PropTypes } from "react";
+import { connect } from "react-redux";
+import { loginUser, fetchQuote, fetchSecretQuote } from "../actions";
+import Login from "../components/Login";
+import Navbar from "../components/Navbar";
+import Quotes from "../components/Quotes";
 
 class App extends Component {
-  
   render() {
-    const { dispatch, quote, isAuthenticated, errorMessage, isSecretQuote } = this.props
+    const {
+      dispatch,
+      quote,
+      isAuthenticated,
+      errorMessage,
+      isSecretQuote
+    } = this.props;
     return (
       <div>
         <Navbar
@@ -16,7 +21,7 @@ class App extends Component {
           errorMessage={errorMessage}
           dispatch={dispatch}
         />
-        <div className='container'>
+        <div className="container">
           <Quotes
             onQuoteClick={() => dispatch(fetchQuote())}
             onSecretQuoteClick={() => dispatch(fetchSecretQuote())}
@@ -26,7 +31,7 @@ class App extends Component {
           />
         </div>
       </div>
-    )
+    );
   }
 }
 
@@ -36,21 +41,19 @@ App.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired,
   errorMessage: PropTypes.string,
   isSecretQuote: PropTypes.bool.isRequired
-}
+};
 
 function mapStateToProps(state) {
-  
-  const { quotes, auth } = state
-  const { quote, authenticated } = quotes
-  const { isAuthenticated, errorMessage } = auth
-  
+  const { quotes, auth } = state;
+  const { quote, authenticated } = quotes;
+  const { isAuthenticated, errorMessage } = auth;
+
   return {
     quote,
     isSecretQuote: authenticated,
     isAuthenticated,
     errorMessage
-  }
+  };
 }
 
-export default connect(mapStateToProps)(App)
-
+export default connect(mapStateToProps)(App);
