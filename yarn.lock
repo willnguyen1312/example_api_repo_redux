@@ -1772,6 +1772,10 @@ recast@^0.11.17:
     private "~0.1.5"
     source-map "~0.5.0"
 
+redux-create-reducer@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/redux-create-reducer/-/redux-create-reducer-1.1.1.tgz#f9ea976a8d3e14c3f32898e25709183c93b0b214"
+
 redux-thunk@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-0.1.0.tgz#8e347606808b35bf8a927df4616f6fed101826e5"
