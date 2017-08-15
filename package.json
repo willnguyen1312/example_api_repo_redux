@@ -5,7 +5,8 @@
   "scripts": {
     "server": "node server/server.js",
     "client": "node server.js",
-    "start": "concurrently \"yarn server\" \"yarn client\""
+    "start": "concurrently \"yarn server\" \"yarn client\"",
+    "setup": "yarn && cd server && yarn"
   },
   "author": "Auth0",
   "license": "MIT",
